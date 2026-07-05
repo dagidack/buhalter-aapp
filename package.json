@@ -36,6 +36,14 @@
         "to": "next/standalone"
       },
       {
+        "from": ".next/static",
+        "to": "next/standalone/.next/static"
+      },
+      {
+        "from": "public",
+        "to": "next/standalone/public"
+      },
+      {
         "from": ".env.local",
         "to": "env/.env.local"
       },
