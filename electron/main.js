@@ -178,6 +178,7 @@ async function startNextServer() {
     PORT: String(port),
     HOSTNAME: "127.0.0.1",
     NODE_ENV: isProduction ? "production" : "development",
+    ELECTRON_RUN_AS_NODE: "1"
   };
   
   nextServerProcess = spawn(process.execPath, [serverScript], {
