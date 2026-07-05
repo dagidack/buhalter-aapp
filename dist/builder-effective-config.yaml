@@ -1,0 +1,36 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.rm-fin.desktop
+productName: RM fin
+asar: true
+asarUnpack:
+  - electron/next-server.js
+  - node_modules/next
+  - node_modules/@next
+  - .next
+files:
+  - filter:
+      - electron/**/*
+      - .next/standalone/**/*
+      - .next/static/**/*
+      - public/**/*
+      - next.config.ts
+      - next-env.d.ts
+      - package.json
+      - src/**/*
+      - tsconfig.json
+      - node_modules/**/*
+extraResources:
+  - from: .next/standalone
+    to: next/standalone
+  - from: .env.local
+    to: env/.env.local
+  - from: My Accounting App IAM.json
+    to: secrets/My Accounting App IAM.json
+mac:
+  category: public.app-category.finance
+  target:
+    - dmg
+  icon: build/icon.png
+electronVersion: 43.0.0
